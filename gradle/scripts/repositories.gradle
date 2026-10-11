@@ -21,14 +21,14 @@ repositories {
         filter { includeGroup("curse.maven") }
     }
     maven {
-        url 'http://dvs1.progwml6.com/files/maven'
-        allowInsecureProtocol true
+        url = 'http://dvs1.progwml6.com/files/maven'
+        allowInsecureProtocol = true
     }
     maven {
-        url 'https://maven.theillusivec4.top/'
+        url = 'https://maven.theillusivec4.top/'
     }
     maven {
-        url "https://maven.shadowsoffire.dev/releases"
+        url = "https://maven.shadowsoffire.dev/releases"
         content {
             includeGroup "dev.shadowsoffire"
         }
