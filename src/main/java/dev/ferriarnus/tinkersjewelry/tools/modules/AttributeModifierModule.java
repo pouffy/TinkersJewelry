@@ -44,7 +44,7 @@ public record AttributeModifierModule(String unique, Attribute attribute, Attrib
 
 
     @Override
-    public RecordLoadable<? extends GenericLoaderRegistry.IHaveLoader> getLoader() {
+    public RecordLoadable<? extends ModifierModule> getLoader() {
         return LOADER;
     }
 

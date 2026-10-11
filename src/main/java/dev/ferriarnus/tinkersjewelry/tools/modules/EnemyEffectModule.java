@@ -41,7 +41,7 @@ public record EnemyEffectModule(MobEffect effect, ToolFormula duration, ToolForm
             VARIABLE_LOADER.requiredField("amplification", EnemyEffectModule::amplification), EnemyEffectModule::new);
 
     @Override
-    public RecordLoadable<? extends GenericLoaderRegistry.IHaveLoader> getLoader() {
+    public RecordLoadable<? extends ModifierModule> getLoader() {
         return LOADER;
     }
 

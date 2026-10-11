@@ -1,3 +1,18 @@
-plugins {
-    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.9.0'
+pluginManagement {
+    repositories {
+        maven { url = "https://maven.minecraftforge.net/" }
+        gradlePluginPortal()
+    }
 }
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.7.0'
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'tinkersjewelry'

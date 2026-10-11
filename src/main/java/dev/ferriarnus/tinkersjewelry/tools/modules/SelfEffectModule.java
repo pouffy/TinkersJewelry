@@ -44,7 +44,7 @@ public record SelfEffectModule(MobEffect effect, ToolFormula duration, ToolFormu
             VARIABLE_LOADER.requiredField("damage", SelfEffectModule::damage), SelfEffectModule::new);
 
     @Override
-    public RecordLoadable<? extends GenericLoaderRegistry.IHaveLoader> getLoader() {
+    public RecordLoadable<? extends ModifierModule> getLoader() {
         return LOADER;
     }
 

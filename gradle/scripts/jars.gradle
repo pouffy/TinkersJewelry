@@ -1,0 +1,38 @@
+tasks.register('slimJar', Jar) {
+    dependsOn("classes")
+    archiveClassifier = "dev-slim"
+    from sourceSets.main.output
+}
+
+obfuscation {
+    reobfuscate(tasks.named('slimJar'), sourceSets.main) {
+        archiveClassifier = "slim"
+    }
+}
+
+java {
+    artifacts.archives(reobfSlimJar)
+    withSourcesJar()
+}
+
+jar.archiveClassifier = "dev"
+
+base {
+    archivesName = "${project.name}-${minecraft_version}"
+}
+
+afterEvaluate {
+    reobfJar.archiveClassifier = ""
+    tasks.withType(org.gradle.jvm.tasks.Jar).configureEach {
+        destinationDirectory = file('build/libs/')
+        manifest.attributes([
+                'MixinConfigs': 'tinkersjewelry.mixins.json',
+                'Specification-Title': project.name,
+                'Specification-Version': mod_version,
+                'Specification-Vendor': 'PouffyDev',
+                'Implementation-Title': base.archivesName,
+                'Implementation-Version': version,
+                'Implementation-Vendor': 'PouffyDev',
+        ])
+    }
+}

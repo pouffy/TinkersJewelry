@@ -34,7 +34,7 @@ public record HurtEnemyModule(ToolFormula formula) implements ModifierModule, Hu
             VARIABLE_LOADER.directField(HurtEnemyModule::formula), HurtEnemyModule::new);
 
     @Override
-    public RecordLoadable<? extends GenericLoaderRegistry.IHaveLoader> getLoader() {
+    public RecordLoadable<? extends ModifierModule> getLoader() {
         return LOADER;
     }
 

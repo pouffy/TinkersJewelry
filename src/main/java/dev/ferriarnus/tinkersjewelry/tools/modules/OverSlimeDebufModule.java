@@ -7,6 +7,7 @@ import slimeknights.mantle.data.registry.GenericLoaderRegistry;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierManager;
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.module.HookProvider;
 import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.definition.module.ToolHooks;
@@ -32,7 +33,7 @@ public record OverSlimeDebufModule() implements ToolStatsHook, ToolModule {
     }
 
     @Override
-    public RecordLoadable<? extends GenericLoaderRegistry.IHaveLoader> getLoader() {
+    public RecordLoadable<? extends ToolModule> getLoader() {
         return LOADER;
     }
 

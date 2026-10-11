@@ -30,7 +30,7 @@ public record BlockBreakModule(ToolFormula formula) implements ModifierModule, B
             VARIABLE_LOADER.directField(BlockBreakModule::formula), BlockBreakModule::new);
 
     @Override
-    public RecordLoadable<? extends GenericLoaderRegistry.IHaveLoader> getLoader() {
+    public RecordLoadable<? extends ModifierModule> getLoader() {
         return LOADER;
     }
 
