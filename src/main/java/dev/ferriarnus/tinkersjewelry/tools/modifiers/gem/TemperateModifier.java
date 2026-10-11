@@ -1,7 +1,6 @@
 package dev.ferriarnus.tinkersjewelry.tools.modifiers.gem;
 
 import dev.ferriarnus.tinkersjewelry.TinkersJewelry;
-import dev.ferriarnus.tinkersjewelry.tools.modifiers.JewelryModifiers;
 import dev.ferriarnus.tinkersjewelry.tools.stats.JewelryToolStats;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -18,8 +17,6 @@ import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHoo
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
-import slimeknights.tconstruct.library.tools.stat.ToolStats;
-import slimeknights.tconstruct.library.utils.Util;
 import slimeknights.tconstruct.tools.stats.ToolType;
 
 import javax.annotation.Nullable;

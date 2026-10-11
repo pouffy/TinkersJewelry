@@ -1,12 +1,8 @@
 package dev.ferriarnus.tinkersjewelry.tools.stats;
 
-import java.util.List;
-import java.util.Objects;
-
-import dev.ferriarnus.tinkersjewelry.TinkersJewelry;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
+import dev.ferriarnus.tinkersjewelry.TinkersJewelry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import slimeknights.mantle.data.loadable.primitive.FloatLoadable;
@@ -17,7 +13,10 @@ import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
-public record BlankBandMaterialStats(int durability, float amplification) implements IRepairableMaterialStats{
+import java.util.List;
+import java.util.Objects;
+
+public record BlankBandMaterialStats(int durability, float amplification) implements IRepairableMaterialStats {
 	
 	public static final MaterialStatsId ID = new MaterialStatsId(new ResourceLocation(TinkersJewelry.MODID, "plain_ring"));
 	public static final MaterialStatType<BlankBandMaterialStats> TYPE = new MaterialStatType<>(ID, new BlankBandMaterialStats(100, 1f),
@@ -27,11 +26,6 @@ public record BlankBandMaterialStats(int durability, float amplification) implem
 	@Override
 	public MaterialStatType<?> getType() {
 		return TYPE;
-	}
-
-	@Override
-	public MaterialStatsId getIdentifier() {
-		return ID;
 	}
 
 	@Override

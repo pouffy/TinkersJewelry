@@ -1,20 +1,10 @@
 package dev.ferriarnus.tinkersjewelry.items;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
-
 import com.google.common.collect.HashMultimap;
-import dev.ferriarnus.tinkersjewelry.tools.hooks.CuriosEquipHook;
-import dev.ferriarnus.tinkersjewelry.tools.hooks.CuriosModifierHooks;
-import dev.ferriarnus.tinkersjewelry.tools.modifiers.gem.AbstractGemModifier;
 import com.google.common.collect.Multimap;
-
+import dev.ferriarnus.tinkersjewelry.tools.hooks.CuriosModifierHooks;
 import dev.ferriarnus.tinkersjewelry.tools.stats.JewelryToolStats;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
@@ -31,6 +21,9 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import javax.annotation.Nullable;
+import java.util.Collections;
+import java.util.List;
+import java.util.UUID;
 
 public class CuriosRingItem extends ModifiableItem implements ICurioItem{
 

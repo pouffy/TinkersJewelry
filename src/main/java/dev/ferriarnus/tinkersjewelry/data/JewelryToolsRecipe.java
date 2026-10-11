@@ -1,29 +1,22 @@
 package dev.ferriarnus.tinkersjewelry.data;
 
-import java.util.function.Consumer;
-
 import dev.ferriarnus.tinkersjewelry.TinkersJewelry;
 import dev.ferriarnus.tinkersjewelry.items.ItemRegistry;
-
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.CompoundIngredient;
 import slimeknights.mantle.recipe.helper.ItemOutput;
 import slimeknights.tconstruct.common.TinkerTags;
-import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.IToolRecipeHelper;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
-import slimeknights.tconstruct.library.recipe.ingredient.MaterialIngredient;
 import slimeknights.tconstruct.library.recipe.partbuilder.ItemPartRecipeBuilder;
 import slimeknights.tconstruct.library.tools.part.IMaterialItem;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
+
+import java.util.function.Consumer;
 
 public class JewelryToolsRecipe extends RecipeProvider implements IMaterialRecipeHelper, IToolRecipeHelper {
 

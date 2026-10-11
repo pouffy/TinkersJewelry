@@ -1,18 +1,16 @@
 package dev.ferriarnus.tinkersjewelry.tools.stats;
 
-import java.util.Collections;
-import java.util.List;
-
 import dev.ferriarnus.tinkersjewelry.TinkersJewelry;
-
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import slimeknights.mantle.data.loadable.record.SingletonLoader;
-import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatType;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
+
+import java.util.Collections;
+import java.util.List;
 
 public record GemMaterialStats() implements IMaterialStats {
 	

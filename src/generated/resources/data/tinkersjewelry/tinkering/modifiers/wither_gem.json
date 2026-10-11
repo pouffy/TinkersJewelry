@@ -35,6 +35,5 @@
       "type": "tinkersjewelry:hurt_enemy",
       "flat": 1.0
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

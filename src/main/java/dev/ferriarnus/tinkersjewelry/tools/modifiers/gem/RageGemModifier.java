@@ -1,11 +1,7 @@
 package dev.ferriarnus.tinkersjewelry.tools.modifiers.gem;
 
-import java.util.List;
-import java.util.UUID;
-
-import dev.ferriarnus.tinkersjewelry.tools.modifiers.JewelryModifiers;
-import dev.ferriarnus.tinkersjewelry.tools.stats.JewelryToolStats;
 import com.google.common.collect.Multimap;
+import dev.ferriarnus.tinkersjewelry.tools.stats.JewelryToolStats;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -18,6 +14,9 @@ import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import top.theillusivec4.curios.api.SlotContext;
+
+import java.util.List;
+import java.util.UUID;
 
 public class RageGemModifier extends AbstractGemModifier{
 

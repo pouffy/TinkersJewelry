@@ -4,5 +4,5 @@ import net.minecraft.world.entity.LivingEntity;
 
 public interface IEntityAwarePredicate {
 
-    void setEntity(LivingEntity entity);
+    void tinkersjewelry$setEntity(LivingEntity entity);
 }

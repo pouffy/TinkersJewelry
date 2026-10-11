@@ -1,9 +1,9 @@
 package dev.ferriarnus.tinkersjewelry.mixin;
 
-import dev.ferriarnus.tinkersjewelry.GemAttributes;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
+import dev.ferriarnus.tinkersjewelry.GemAttributes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;

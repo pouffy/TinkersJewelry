@@ -2,7 +2,6 @@ package dev.ferriarnus.tinkersjewelry.data;
 
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
-import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
 public class JewelryMaterialData extends AbstractMaterialDataProvider {
 

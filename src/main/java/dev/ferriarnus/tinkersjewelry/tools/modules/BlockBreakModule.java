@@ -7,7 +7,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
-import slimeknights.mantle.data.registry.GenericLoaderRegistry;
 import slimeknights.tconstruct.library.json.math.ModifierFormula;
 import slimeknights.tconstruct.library.json.variable.VariableFormula;
 import slimeknights.tconstruct.library.json.variable.VariableFormulaLoadable;

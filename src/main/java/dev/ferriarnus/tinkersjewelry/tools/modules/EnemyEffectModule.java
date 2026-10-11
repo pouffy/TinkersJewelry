@@ -2,18 +2,14 @@ package dev.ferriarnus.tinkersjewelry.tools.modules;
 
 import dev.ferriarnus.tinkersjewelry.tools.hooks.CuriosModifierHooks;
 import dev.ferriarnus.tinkersjewelry.tools.hooks.HurtEnemyHook;
-import dev.ferriarnus.tinkersjewelry.tools.modifiers.JewelryModifiers;
-import dev.ferriarnus.tinkersjewelry.tools.stats.JewelryToolStats;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import slimeknights.mantle.data.loadable.Loadables;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
-import slimeknights.mantle.data.registry.GenericLoaderRegistry;
 import slimeknights.tconstruct.library.json.math.ModifierFormula;
 import slimeknights.tconstruct.library.json.math.PostFixFormula;
 import slimeknights.tconstruct.library.json.variable.VariableFormula;
@@ -27,7 +23,6 @@ import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.function.Function;
 
 public record EnemyEffectModule(MobEffect effect, ToolFormula duration, ToolFormula amplification) implements ModifierModule, HurtEnemyHook {

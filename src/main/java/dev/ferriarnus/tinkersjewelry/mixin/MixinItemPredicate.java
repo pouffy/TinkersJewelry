@@ -1,9 +1,9 @@
 package dev.ferriarnus.tinkersjewelry.mixin;
 
-import dev.ferriarnus.tinkersjewelry.GemAttributes;
-import dev.ferriarnus.tinkersjewelry.IEntityAwarePredicate;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import dev.ferriarnus.tinkersjewelry.GemAttributes;
+import dev.ferriarnus.tinkersjewelry.IEntityAwarePredicate;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,24 +21,24 @@ public class MixinItemPredicate implements IEntityAwarePredicate {
 
     @Nullable
     @Unique
-    private LivingEntity entity;
+    private LivingEntity tinkersjewelry$entity;
 
     @Override
-    public void setEntity(LivingEntity entity) {
-        this.entity = entity;
+    public void tinkersjewelry$setEntity(LivingEntity entity) {
+        this.tinkersjewelry$entity = entity;
     }
 
     @WrapOperation(method = "matches", at = @At(value = "INVOKE", target = "Lnet/minecraft/advancements/critereon/EnchantmentPredicate;containedIn(Ljava/util/Map;)Z"))
     public boolean matchEnchantment(EnchantmentPredicate instance, Map<Enchantment, Integer> integer, Operation<Boolean> original) {
-        if (entity == null) {
+        if (tinkersjewelry$entity == null) {
             return original.call(instance, integer);
         }
         double value = 0;
         if (instance.enchantment == Enchantments.BLOCK_FORTUNE) {
-            value = entity.getAttributeValue(GemAttributes.FORTUNE.get());
+            value = tinkersjewelry$entity.getAttributeValue(GemAttributes.FORTUNE.get());
         }
         if (instance.enchantment == Enchantments.SILK_TOUCH) {
-            value = entity.getAttributeValue(GemAttributes.SILK.get());
+            value = tinkersjewelry$entity.getAttributeValue(GemAttributes.SILK.get());
         }
         return original.call(instance, integer) || value > 0;
     }

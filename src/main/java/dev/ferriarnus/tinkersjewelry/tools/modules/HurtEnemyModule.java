@@ -2,15 +2,10 @@ package dev.ferriarnus.tinkersjewelry.tools.modules;
 
 import dev.ferriarnus.tinkersjewelry.tools.hooks.CuriosModifierHooks;
 import dev.ferriarnus.tinkersjewelry.tools.hooks.HurtEnemyHook;
-import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
-import slimeknights.mantle.data.loadable.Loadables;
-import slimeknights.mantle.data.loadable.primitive.StringLoadable;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
-import slimeknights.mantle.data.registry.GenericLoaderRegistry;
-import slimeknights.tconstruct.library.json.TinkerLoadables;
 import slimeknights.tconstruct.library.json.math.ModifierFormula;
 import slimeknights.tconstruct.library.json.variable.VariableFormula;
 import slimeknights.tconstruct.library.json.variable.VariableFormulaLoadable;

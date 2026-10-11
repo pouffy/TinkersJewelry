@@ -1,10 +1,8 @@
 package dev.ferriarnus.tinkersjewelry.data;
 
 import dev.ferriarnus.tinkersjewelry.tools.stats.GemMaterialStats;
-
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColorMapping;
-import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
 public class JewelryMaterialSprite extends AbstractMaterialSpriteProvider {
 

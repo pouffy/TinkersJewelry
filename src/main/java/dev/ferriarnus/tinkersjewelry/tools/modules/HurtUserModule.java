@@ -7,7 +7,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
-import slimeknights.mantle.data.registry.GenericLoaderRegistry;
 import slimeknights.tconstruct.library.json.math.ModifierFormula;
 import slimeknights.tconstruct.library.json.variable.VariableFormula;
 import slimeknights.tconstruct.library.json.variable.VariableFormulaLoadable;

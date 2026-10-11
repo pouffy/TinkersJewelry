@@ -42,6 +42,5 @@
       },
       "effect": "minecraft:water_breathing"
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

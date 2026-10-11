@@ -1,17 +1,8 @@
 package dev.ferriarnus.tinkersjewelry.tools.modifiers.gem;
 
-import java.util.UUID;
-
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-
-import dev.ferriarnus.tinkersjewelry.tools.hooks.AttributeModifierHook;
-import dev.ferriarnus.tinkersjewelry.tools.hooks.BlockBreakHook;
-import dev.ferriarnus.tinkersjewelry.tools.hooks.CuriosEquipHook;
-import dev.ferriarnus.tinkersjewelry.tools.hooks.CuriosModifierHooks;
-import dev.ferriarnus.tinkersjewelry.tools.hooks.CuriosTickHook;
-import dev.ferriarnus.tinkersjewelry.tools.hooks.HurtEnemyHook;
-import dev.ferriarnus.tinkersjewelry.tools.hooks.HurtUserHook;
+import dev.ferriarnus.tinkersjewelry.tools.hooks.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -33,6 +24,7 @@ import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import top.theillusivec4.curios.api.SlotContext;
 
 import javax.annotation.Nullable;
+import java.util.UUID;
 
 public abstract class AbstractGemModifier extends Modifier implements TooltipModifierHook, CuriosEquipHook, CuriosTickHook, AttributeModifierHook, HurtUserHook, HurtEnemyHook, BlockBreakHook {
 

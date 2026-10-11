@@ -1,45 +1,39 @@
 package dev.ferriarnus.tinkersjewelry;
 
+import com.mojang.logging.LogUtils;
 import dev.ferriarnus.tinkersjewelry.data.*;
+import dev.ferriarnus.tinkersjewelry.items.ItemRegistry;
 import dev.ferriarnus.tinkersjewelry.menu.JewelryMenus;
 import dev.ferriarnus.tinkersjewelry.network.JewelryNetwork;
 import dev.ferriarnus.tinkersjewelry.tools.hooks.CuriosModifierHooks;
+import dev.ferriarnus.tinkersjewelry.tools.modifiers.JewelryModifiers;
+import dev.ferriarnus.tinkersjewelry.tools.stats.BlankBandMaterialStats;
+import dev.ferriarnus.tinkersjewelry.tools.stats.GemMaterialStats;
 import dev.ferriarnus.tinkersjewelry.tools.stats.JewelryToolStats;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import org.slf4j.Logger;
-
-import dev.ferriarnus.tinkersjewelry.items.ItemRegistry;
-import dev.ferriarnus.tinkersjewelry.tools.modifiers.JewelryModifiers;
-import dev.ferriarnus.tinkersjewelry.tools.stats.GemMaterialStats;
-import dev.ferriarnus.tinkersjewelry.tools.stats.BlankBandMaterialStats;
-import com.mojang.logging.LogUtils;
-
-import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.slf4j.Logger;
 import slimeknights.tconstruct.library.client.data.material.GeneratorPartTextureJsonGenerator;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.data.sprite.TinkerMaterialSpriteProvider;
-import top.theillusivec4.curios.api.SlotTypeMessage;
-import top.theillusivec4.curios.api.SlotTypePreset;
 
 @Mod(TinkersJewelry.MODID)
 public class TinkersJewelry {
-	// Directly reference a slf4j logger
 	private static final Logger LOGGER = LogUtils.getLogger();
 	public static final String MODID = "tinkersjewelry";
 	public static final TagKey<Item> JEWELRY = ItemTags.create(new ResourceLocation(MODID, "modifiable/jewelry"));
@@ -65,12 +59,12 @@ public class TinkersJewelry {
 	}
 	
 	public void sendImc(InterModEnqueueEvent evt) {
-		InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());
-		InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.RING.getMessageBuilder().size(2).build());
-		InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().build());
-		InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BODY.getMessageBuilder().build());
-		InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.HEAD.getMessageBuilder().build());
-		InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.NECKLACE.getMessageBuilder().build());
+		//InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());
+		//InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.RING.getMessageBuilder().size(2).build());
+		//InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().build());
+		//InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BODY.getMessageBuilder().build());
+		//InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.HEAD.getMessageBuilder().build());
+		//InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.NECKLACE.getMessageBuilder().build());
 		
 		MaterialRegistry.getInstance().registerStatType(BlankBandMaterialStats.TYPE);
 		MaterialRegistry.getInstance().registerStatType(GemMaterialStats.TYPE);
@@ -95,6 +89,7 @@ public class TinkersJewelry {
 		generator.addProvider(server, new JewelryStationSlotLayout(generator.getPackOutput()));
 		generator.addProvider(server, new JewelryModifierProvider(generator.getPackOutput()));
 		generator.addProvider(server, new JewelryModifierRecipe(generator.getPackOutput()));
+		generator.addProvider(server, new JewelryCuriosProvider(generator.getPackOutput(), event.getExistingFileHelper(), event.getLookupProvider()));
 
 		TinkerMaterialSpriteProvider materialSprites = new TinkerMaterialSpriteProvider();
 		JewelryMaterialSprite newMaterialSprites = new JewelryMaterialSprite();

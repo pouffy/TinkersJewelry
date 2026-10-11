@@ -1,13 +1,9 @@
 package dev.ferriarnus.tinkersjewelry.items;
 
-import java.util.function.Consumer;
-import java.util.function.Supplier;
-
 import dev.ferriarnus.tinkersjewelry.TinkersJewelry;
 import dev.ferriarnus.tinkersjewelry.tools.JewelryDefinitions;
-import dev.ferriarnus.tinkersjewelry.tools.stats.GemMaterialStats;
 import dev.ferriarnus.tinkersjewelry.tools.stats.BlankBandMaterialStats;
-
+import dev.ferriarnus.tinkersjewelry.tools.stats.GemMaterialStats;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.RandomSource;
@@ -28,6 +24,9 @@ import slimeknights.tconstruct.library.tools.item.IModifiable;
 import slimeknights.tconstruct.library.tools.part.IMaterialItem;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.tables.TinkerTables;
+
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class ItemRegistry {
 

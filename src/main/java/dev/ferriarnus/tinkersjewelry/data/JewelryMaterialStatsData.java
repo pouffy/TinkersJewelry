@@ -1,8 +1,7 @@
 package dev.ferriarnus.tinkersjewelry.data;
 
-import dev.ferriarnus.tinkersjewelry.tools.stats.GemMaterialStats;
 import dev.ferriarnus.tinkersjewelry.tools.stats.BlankBandMaterialStats;
-
+import dev.ferriarnus.tinkersjewelry.tools.stats.GemMaterialStats;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;

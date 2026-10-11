@@ -9,7 +9,7 @@ import net.minecraft.world.item.TooltipFlag;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
-import slimeknights.tconstruct.tools.TinkerModifiers;
+import slimeknights.tconstruct.shared.TinkerEffects;
 import top.theillusivec4.curios.api.SlotContext;
 
 import javax.annotation.Nullable;
@@ -20,8 +20,8 @@ public class MagneticModifier extends AbstractGemModifier {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack, ModifierEntry entry) {
         LivingEntity entity = slotContext.entity();
-        if (!entity.hasEffect(TinkerModifiers.magneticEffect.get())) {
-            entity.addEffect(new MobEffectInstance(TinkerModifiers.magneticEffect.get(), 200, 0, false, false));
+        if (!entity.hasEffect(TinkerEffects.magnetic.get())) {
+            entity.addEffect(new MobEffectInstance(TinkerEffects.magnetic.get(), 200, 0, false, false));
         }
     }
 

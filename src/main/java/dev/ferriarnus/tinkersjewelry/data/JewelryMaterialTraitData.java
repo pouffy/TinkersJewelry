@@ -1,9 +1,8 @@
 package dev.ferriarnus.tinkersjewelry.data;
 
 import dev.ferriarnus.tinkersjewelry.tools.modifiers.JewelryModifiers;
-import dev.ferriarnus.tinkersjewelry.tools.stats.GemMaterialStats;
 import dev.ferriarnus.tinkersjewelry.tools.stats.BlankBandMaterialStats;
-
+import dev.ferriarnus.tinkersjewelry.tools.stats.GemMaterialStats;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
@@ -96,7 +95,7 @@ public class JewelryMaterialTraitData extends AbstractMaterialTraitDataProvider 
 
 		addTraits(MaterialIds.slimesteel, BlankBandMaterialStats.ID, new ModifierEntry(ModifierIds.overcast, 1), new ModifierEntry(TinkerModifiers.overslime, 1));
 		addTraits(MaterialIds.amethystBronze, BlankBandMaterialStats.ID, new ModifierEntry(JewelryModifiers.PRECIOUS, 1));
-		addTraits(MaterialIds.pigIron, BlankBandMaterialStats.ID, TinkerModifiers.tasty );
+		addTraits(MaterialIds.pigIron, BlankBandMaterialStats.ID, ModifierIds.tasty );
 		addTraits(MaterialIds.roseGold, BlankBandMaterialStats.ID, new ModifierEntry(JewelryModifiers.PRECIOUS, 1), new ModifierEntry(ModifierIds.enhanced, 1));
 		addTraits(MaterialIds.cobalt, BlankBandMaterialStats.ID, new ModifierEntry[] {} ); //remove trait
 

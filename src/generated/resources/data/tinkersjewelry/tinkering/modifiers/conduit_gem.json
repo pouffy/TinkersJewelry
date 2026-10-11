@@ -42,6 +42,5 @@
       },
       "effect": "minecraft:conduit_power"
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

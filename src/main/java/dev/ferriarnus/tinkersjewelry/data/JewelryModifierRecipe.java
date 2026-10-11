@@ -1,19 +1,15 @@
 package dev.ferriarnus.tinkersjewelry.data;
 
 import dev.ferriarnus.tinkersjewelry.TinkersJewelry;
-import dev.ferriarnus.tinkersjewelry.items.ItemRegistry;
 import dev.ferriarnus.tinkersjewelry.tools.modifiers.JewelryModifiers;
-import dev.ferriarnus.tinkersjewelry.tools.stats.JewelryToolStats;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import slimeknights.mantle.recipe.data.IRecipeHelper;
-import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.tools.TinkerModifiers;

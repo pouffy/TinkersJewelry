@@ -3,9 +3,8 @@
   "modules": [
     {
       "type": "tconstruct:modifier_slot",
-      "count": 1,
+      "each_level": 1,
       "name": "abilities"
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

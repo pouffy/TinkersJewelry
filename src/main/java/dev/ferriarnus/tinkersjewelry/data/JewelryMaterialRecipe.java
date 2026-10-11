@@ -1,7 +1,5 @@
 package dev.ferriarnus.tinkersjewelry.data;
 
-import java.util.function.Consumer;
-
 import dev.ferriarnus.tinkersjewelry.TinkersJewelry;
 import dev.ferriarnus.tinkersjewelry.items.ItemRegistry;
 import net.minecraft.data.PackOutput;
@@ -12,12 +10,12 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.ForgeRegistries;
 import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
-import slimeknights.tconstruct.tools.data.material.MaterialIds;
+
+import java.util.function.Consumer;
 
 public class JewelryMaterialRecipe extends RecipeProvider implements IMaterialRecipeHelper {
 
