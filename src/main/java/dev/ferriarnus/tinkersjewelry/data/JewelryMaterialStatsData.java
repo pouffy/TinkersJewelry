@@ -1,5 +1,6 @@
 package dev.ferriarnus.tinkersjewelry.data;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import dev.ferriarnus.tinkersjewelry.tools.stats.BlankBandMaterialStats;
 import dev.ferriarnus.tinkersjewelry.tools.stats.GemMaterialStats;
 import net.minecraft.data.PackOutput;
@@ -7,6 +8,7 @@ import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvide
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
+@MethodsReturnNonnullByDefault
 public class JewelryMaterialStatsData extends AbstractMaterialStatsDataProvider {
 
 	public JewelryMaterialStatsData(PackOutput packOutput, AbstractMaterialDataProvider materials) {
@@ -26,8 +28,8 @@ public class JewelryMaterialStatsData extends AbstractMaterialStatsDataProvider 
 		addMaterialStats(MaterialIds.gold, new BlankBandMaterialStats(200, 1.4f));
 
 		addMaterialStats(MaterialIds.osmium, new BlankBandMaterialStats(500, 1f));
-		addMaterialStats(MaterialIds.tungsten, new BlankBandMaterialStats(350, 1.3f));
-		addMaterialStats(MaterialIds.platinum, new BlankBandMaterialStats(400, 1.4f));
+		//addMaterialStats(MaterialIds.tungsten, new BlankBandMaterialStats(350, 1.3f));
+		//addMaterialStats(MaterialIds.platinum, new BlankBandMaterialStats(400, 1.4f));
 		addMaterialStats(MaterialIds.silver, new BlankBandMaterialStats(300, 1.1f));
 		addMaterialStats(MaterialIds.lead, new BlankBandMaterialStats(200, 1f));
 

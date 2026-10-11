@@ -1,5 +1,6 @@
 package dev.ferriarnus.tinkersjewelry.data;
 
+import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import dev.ferriarnus.tinkersjewelry.tools.modifiers.JewelryModifiers;
 import dev.ferriarnus.tinkersjewelry.tools.stats.BlankBandMaterialStats;
 import dev.ferriarnus.tinkersjewelry.tools.stats.GemMaterialStats;
@@ -11,6 +12,7 @@ import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
+@MethodsReturnNonnullByDefault
 public class JewelryMaterialTraitData extends AbstractMaterialTraitDataProvider {
 
 	public JewelryMaterialTraitData(PackOutput packOutput, AbstractMaterialDataProvider materials) {
@@ -88,8 +90,8 @@ public class JewelryMaterialTraitData extends AbstractMaterialTraitDataProvider 
 		addTraits(MaterialIds.gold, BlankBandMaterialStats.ID, new ModifierEntry(JewelryModifiers.PRECIOUS, 1));
 
 		addTraits(MaterialIds.osmium, BlankBandMaterialStats.ID, ModifierIds.dense);
-		addTraits(MaterialIds.tungsten, BlankBandMaterialStats.ID, new ModifierEntry[] {} ); //remove trait
-		addTraits(MaterialIds.platinum, BlankBandMaterialStats.ID, new ModifierEntry(JewelryModifiers.PRECIOUS, 1));
+		//addTraits(MaterialIds.tungsten, BlankBandMaterialStats.ID, new ModifierEntry[] {} ); //remove trait
+		//addTraits(MaterialIds.platinum, BlankBandMaterialStats.ID, new ModifierEntry(JewelryModifiers.PRECIOUS, 1));
 		addTraits(MaterialIds.silver, BlankBandMaterialStats.ID, new ModifierEntry(JewelryModifiers.PRECIOUS, 1));
 		addTraits(MaterialIds.lead, BlankBandMaterialStats.ID, ModifierIds.dense);
 

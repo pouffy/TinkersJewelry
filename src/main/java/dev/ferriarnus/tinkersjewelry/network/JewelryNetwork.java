@@ -1,7 +1,6 @@
 package dev.ferriarnus.tinkersjewelry.network;
 
 import dev.ferriarnus.tinkersjewelry.TinkersJewelry;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkDirection;
 import slimeknights.mantle.network.NetworkWrapper;
 
@@ -9,7 +8,7 @@ public class JewelryNetwork extends NetworkWrapper {
     private static JewelryNetwork instance;
 
     public JewelryNetwork() {
-        super(new ResourceLocation(TinkersJewelry.MODID, "network"));
+        super(TinkersJewelry.getResource("network"), "1.0");
     }
 
     public static JewelryNetwork getInstance() {

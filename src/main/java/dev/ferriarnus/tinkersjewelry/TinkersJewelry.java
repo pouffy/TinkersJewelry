@@ -25,6 +25,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.jetbrains.annotations.Contract;
 import org.slf4j.Logger;
 import slimeknights.tconstruct.library.client.data.material.GeneratorPartTextureJsonGenerator;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
@@ -36,22 +37,21 @@ import slimeknights.tconstruct.tools.data.sprite.TinkerMaterialSpriteProvider;
 public class TinkersJewelry {
 	private static final Logger LOGGER = LogUtils.getLogger();
 	public static final String MODID = "tinkersjewelry";
-	public static final TagKey<Item> JEWELRY = ItemTags.create(new ResourceLocation(MODID, "modifiable/jewelry"));
+	public static final TagKey<Item> JEWELRY = ItemTags.create(getResource("modifiable/jewelry"));
 
 
-	public TinkersJewelry() { 
-		
-		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+	public TinkersJewelry(FMLJavaModLoadingContext context) {
+		IEventBus modEventBus = context.getModEventBus();
         modEventBus.addListener(EventPriority.LOWEST, this::gatherData);
         modEventBus.addListener(this::sendImc);
 		MinecraftForge.EVENT_BUS.addListener(this::commonSetup);
 
 		JewelryToolStats.register();
 		
-		ItemRegistry.register();
-		JewelryModifiers.register();
-		GemAttributes.register();
-		JewelryMenus.register();
+		ItemRegistry.register(modEventBus);
+		JewelryModifiers.register(modEventBus);
+		GemAttributes.register(modEventBus);
+		JewelryMenus.register(modEventBus);
 
 		JewelryNetwork.setup();
 
@@ -59,15 +59,16 @@ public class TinkersJewelry {
 	}
 	
 	public void sendImc(InterModEnqueueEvent evt) {
-		//InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());
-		//InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.RING.getMessageBuilder().size(2).build());
-		//InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().build());
-		//InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BODY.getMessageBuilder().build());
-		//InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.HEAD.getMessageBuilder().build());
-		//InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.NECKLACE.getMessageBuilder().build());
-		
 		MaterialRegistry.getInstance().registerStatType(BlankBandMaterialStats.TYPE);
 		MaterialRegistry.getInstance().registerStatType(GemMaterialStats.TYPE);
+	}
+
+	@Contract("_ -> new")
+	public static ResourceLocation getResource(String name) {
+		if (name.contains(":")) {
+			return ResourceLocation.tryParse(name);
+		}
+		return ResourceLocation.fromNamespaceAndPath(MODID, name);
 	}
 
 	public void commonSetup(FMLCommonSetupEvent event) {
@@ -101,8 +102,8 @@ public class TinkersJewelry {
 		builder.add(BlankBandMaterialStats.ID, MaterialIds.iron.getId());
 		builder.add(BlankBandMaterialStats.ID, MaterialIds.gold.getId());
 		builder.add(BlankBandMaterialStats.ID, MaterialIds.osmium.getId());
-		builder.add(BlankBandMaterialStats.ID, MaterialIds.tungsten.getId());
-		builder.add(BlankBandMaterialStats.ID, MaterialIds.platinum.getId());
+		//builder.add(BlankBandMaterialStats.ID, MaterialIds.tungsten.getId());
+		//builder.add(BlankBandMaterialStats.ID, MaterialIds.platinum.getId());
 		builder.add(BlankBandMaterialStats.ID, MaterialIds.silver.getId());
 		builder.add(BlankBandMaterialStats.ID, MaterialIds.lead.getId());
 		builder.add(BlankBandMaterialStats.ID, MaterialIds.slimesteel.getId());

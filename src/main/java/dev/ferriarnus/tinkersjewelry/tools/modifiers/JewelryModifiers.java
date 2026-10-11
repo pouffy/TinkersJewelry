@@ -3,7 +3,7 @@ package dev.ferriarnus.tinkersjewelry.tools.modifiers;
 import dev.ferriarnus.tinkersjewelry.TinkersJewelry;
 
 import dev.ferriarnus.tinkersjewelry.tools.modifiers.gem.*;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.eventbus.api.IEventBus;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.util.DynamicModifier;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
@@ -60,8 +60,8 @@ public class JewelryModifiers {
 
 	public static final DynamicModifier UNDYING = MODIFIERS.registerDynamic("undying");
 
-	public static void register() {
-		MODIFIERS.register(FMLJavaModLoadingContext.get().getModEventBus());
+	public static void register(IEventBus modEventBus) {
+		MODIFIERS.register(modEventBus);
 	}
 
 	private static ModifierId id(String name) {
