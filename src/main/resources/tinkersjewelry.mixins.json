@@ -1,7 +1,8 @@
 {
   "required": true,
+  "minVersion": "0.8",
   "package": "dev.ferriarnus.tinkersjewelry.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_8",
   "refmap": "tinkersjewelry.refmap.json",
   "mixins": [
     "MixinVillager",
@@ -9,5 +10,10 @@
     "MixinItemPredicate",
     "MixinMatchTool"
   ],
-  "minVersion": "0.8.4"
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
 }
