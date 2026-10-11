@@ -1,4 +1,4 @@
-# Tinkers' Jewelry
+# Tinkers' Jewelry Re-Socketed
 **Modifiable Curio trinkets for Tinker's Construct 1.20.1+**
 
 [Join My Discord](https://discord.gg/9N8cZh3hdB)
