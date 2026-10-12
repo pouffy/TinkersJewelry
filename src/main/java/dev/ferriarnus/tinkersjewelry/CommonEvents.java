@@ -6,6 +6,7 @@ import dev.ferriarnus.tinkersjewelry.tools.modifiers.JewelryModifiers;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,15 +18,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameRules;
 import net.minecraftforge.common.util.FakePlayer;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
+import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
@@ -76,6 +76,21 @@ public class CommonEvents {
                 }
             }));
         }
+    }
+
+    @SubscribeEvent
+    static void livingDamage(LivingDamageEvent event) {
+        LivingEntity entity = event.getEntity();
+        DamageSource source = event.getSource();
+        float amount = event.getAmount();
+        EquipmentContext context = new EquipmentContext(entity);
+        getModifiableCurios(event.getEntity()).forEach(p -> asTool(p.getFirst(), (tool) -> {
+            if (!tool.isBroken()) {
+                for (ModifierEntry entry : tool.getModifierList()) {
+                    entry.getHook(CuriosModifierHooks.MODIFY_HURT).modifyDamageTaken(tool, p.getFirst(), entry, context, p.getSecond().identifier(), p.getSecond().index(), source, amount, OnAttackedModifierHook.isDirectDamage(source));
+                }
+            }
+        }));
     }
 
     private static final String SOULBOUND_SLOT = "curios_soulbound";
