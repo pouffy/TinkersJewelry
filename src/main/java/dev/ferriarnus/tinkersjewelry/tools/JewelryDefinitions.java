@@ -61,6 +61,11 @@ public class JewelryDefinitions {
 		cutGemMaterials.add(MaterialIds.whitestone);
 		cutGemMaterials.add(MaterialIds.necronium);
 
+		cutGemMaterials.add(MaterialIds.ichor);
+		cutGemMaterials.add(MaterialIds.enderslime);
+		cutGemMaterials.add(MaterialIds.skyslime);
+		cutGemMaterials.add(MaterialIds.earthslime);
+
 		//Variants
 		plainRingMaterials.add(MaterialIds.oxidizedCopper);
 		plainRingMaterials.add(MaterialIds.oxidizedIron);

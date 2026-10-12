@@ -65,10 +65,11 @@ public class JewelryMaterialTraitData extends AbstractMaterialTraitDataProvider 
 		addTraits(JewelryMaterials.xychorium_gem_dark, GemMaterialStats.ID, JewelryModifiers.DARKNESS_GEM);
 
 		addTraits(JewelryMaterials.hematite, GemMaterialStats.ID, new ModifierEntry(JewelryModifiers.LIFESTEAL_GEM, 2));
-		addTraits(JewelryMaterials.ichor_crystal, GemMaterialStats.ID, TinkerModifiers.overslime.getId(), JewelryModifiers.FIRERESISTANCE_GEM);
-		addTraits(JewelryMaterials.ender_crystal, GemMaterialStats.ID, TinkerModifiers.overslime.getId(), JewelryModifiers.REACH_GEM);
-		addTraits(JewelryMaterials.sky_crystal, GemMaterialStats.ID, TinkerModifiers.overslime.getId(), JewelryModifiers.GRAVITY_GEM);
-		addTraits(JewelryMaterials.earth_crystal, GemMaterialStats.ID, TinkerModifiers.overslime.getId(), JewelryModifiers.RESISTANCE_GEM);
+
+		addTraits(MaterialIds.ichor, GemMaterialStats.ID, TinkerModifiers.overslime.getId(), JewelryModifiers.GODSPEED_GEM);
+		addTraits(MaterialIds.enderslime, GemMaterialStats.ID, TinkerModifiers.overslime.getId(), JewelryModifiers.ENDERDODGING_GEM);
+		addTraits(MaterialIds.skyslime, GemMaterialStats.ID, TinkerModifiers.overslime.getId(), JewelryModifiers.SKYFALL_GEM);
+		addTraits(MaterialIds.earthslime, GemMaterialStats.ID, TinkerModifiers.overslime.getId(), JewelryModifiers.OVERGROWTH_GEM);
 
 		addTraits(MaterialIds.rock, GemMaterialStats.ID, JewelryModifiers.ARMOR_GEM);
 		addTraits(MaterialIds.flint, GemMaterialStats.ID, JewelryModifiers.PIERCING_GEM);

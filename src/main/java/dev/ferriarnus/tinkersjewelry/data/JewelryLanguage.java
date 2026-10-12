@@ -95,10 +95,10 @@ public class JewelryLanguage extends LanguageProvider {
         forMaterial(JewelryMaterials.prismarine_crystal);
         forMaterial(JewelryMaterials.purpur);
 
-        forMaterial(JewelryMaterials.earth_crystal, "Earthslime");
-        forMaterial(JewelryMaterials.sky_crystal, "Skyslime");
-        forMaterial(JewelryMaterials.ender_crystal, "Enderslime");
-        forMaterial(JewelryMaterials.ichor_crystal, "Ichor");
+        //forMaterial(JewelryMaterials.earth_crystal, "Earthslime");
+        //forMaterial(JewelryMaterials.sky_crystal, "Skyslime");
+        //forMaterial(JewelryMaterials.ender_crystal, "Enderslime");
+        //forMaterial(JewelryMaterials.ichor_crystal, "Ichor");
 
         forMaterial(JewelryMaterials.eudialyte);
         forMaterial(JewelryMaterials.fire_opal);
@@ -166,6 +166,10 @@ public class JewelryLanguage extends LanguageProvider {
         forModifier(JewelryModifiers.INVARIANT.getId(), "Invariant", "Couldn't care less", "Jewelry amplifies in neutral temperatures");
         forModifier(JewelryModifiers.TEMPERATE.getId(), "Temperate", "Extreme!", "Jewelry amplifies in extreme temperatures");
         forModifier(JewelryModifiers.OVERWIELD, "Overwield", "Like a slimeblade!", "Consumes overslime to boost amplification");
+        forModifier(JewelryModifiers.OVERGROWTH_GEM, "Overgrowth", "Fungal!", "Tool slowly grows overslime");
+        forModifier(JewelryModifiers.SKYFALL_GEM, "Skyfall", "Falling with style!", "Reduces the effect of gravity");
+        forModifier(JewelryModifiers.GODSPEED_GEM, "Godspeed", "Gotta go fast!", "Increases movement, attack and mining speed");
+        forModifier(JewelryModifiers.ENDERDODGING_GEM, "Enderdodging", "Agility of an enderman", "Adds a chance of dodging attacks by teleporting, with a higher chance on projectiles");
     }
 
     private void forMaterial(MaterialId key) {

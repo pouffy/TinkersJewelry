@@ -1,10 +1,13 @@
 package dev.ferriarnus.tinkersjewelry.tools.modifiers.gem;
 
+import com.google.common.collect.Multimap;
 import dev.ferriarnus.tinkersjewelry.tools.modifiers.JewelryModifiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -18,6 +21,7 @@ import slimeknights.tconstruct.library.utils.TeleportHelper;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.UUID;
 
 public class EnderclearanceGemModifier extends AbstractGemModifier {
 

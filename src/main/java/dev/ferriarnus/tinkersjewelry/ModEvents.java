@@ -17,14 +17,16 @@ public class ModEvents {
     @SubscribeEvent
     static void register(RegisterEvent event) {
         if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
-            ToolModule.LOADER.register(new ResourceLocation(TinkersJewelry.MODID, "overslime_debuf"), OverSlimeDebufModule.LOADER);
+            ToolModule.LOADER.register(TinkersJewelry.getResource("overslime_debuf"), OverSlimeDebufModule.LOADER);
 
-            ModifierModule.LOADER.register(new ResourceLocation(TinkersJewelry.MODID, "attribute_modifier"), AttributeModifierModule.LOADER);
-            ModifierModule.LOADER.register(new ResourceLocation(TinkersJewelry.MODID, "hurt_enemy"), HurtEnemyModule.LOADER);
-            ModifierModule.LOADER.register(new ResourceLocation(TinkersJewelry.MODID, "hurt_user"), HurtUserModule.LOADER);
-            ModifierModule.LOADER.register(new ResourceLocation(TinkersJewelry.MODID, "block_break"), BlockBreakModule.LOADER);
-            ModifierModule.LOADER.register(new ResourceLocation(TinkersJewelry.MODID, "enemy_effect"), EnemyEffectModule.LOADER);
-            ModifierModule.LOADER.register(new ResourceLocation(TinkersJewelry.MODID, "self_effect"), SelfEffectModule.LOADER);
+            ModifierModule.LOADER.register(TinkersJewelry.getResource("overgrowth"), OvergrowthCurioModule.LOADER);
+            ModifierModule.LOADER.register(TinkersJewelry.getResource("teleport_dodge"), TeleportDodgeCurioModule.LOADER);
+            ModifierModule.LOADER.register(TinkersJewelry.getResource("attribute_modifier"), AttributeModifierModule.LOADER);
+            ModifierModule.LOADER.register(TinkersJewelry.getResource("hurt_enemy"), HurtEnemyModule.LOADER);
+            ModifierModule.LOADER.register(TinkersJewelry.getResource("hurt_user"), HurtUserModule.LOADER);
+            ModifierModule.LOADER.register(TinkersJewelry.getResource("block_break"), BlockBreakModule.LOADER);
+            ModifierModule.LOADER.register(TinkersJewelry.getResource("enemy_effect"), EnemyEffectModule.LOADER);
+            ModifierModule.LOADER.register(TinkersJewelry.getResource("self_effect"), SelfEffectModule.LOADER);
         }
     }
 

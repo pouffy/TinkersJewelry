@@ -1,0 +1,43 @@
+{
+  "level_display": "tconstruct:single_level",
+  "modules": [
+    {
+      "type": "tinkersjewelry:attribute_modifier",
+      "attribute": "forge:entity_gravity",
+      "formula": [
+        "$level",
+        -0.05,
+        "*",
+        "$amplification",
+        "*"
+      ],
+      "operation": "multiply_total",
+      "unique": "tinkersjewelry.modifier.skyfall_gem",
+      "variables": {
+        "amplification": {
+          "type": "tconstruct:tool_stat",
+          "stat": "tinkersjewelry:amplification"
+        }
+      }
+    },
+    {
+      "type": "tinkersjewelry:attribute_modifier",
+      "attribute": "tconstruct:generic.safe_fall_distance",
+      "formula": [
+        "$level",
+        1.0,
+        "+",
+        "$amplification",
+        "*"
+      ],
+      "operation": "addition",
+      "unique": "tinkersjewelry.modifier.skyfall_gem",
+      "variables": {
+        "amplification": {
+          "type": "tconstruct:tool_stat",
+          "stat": "tinkersjewelry:amplification"
+        }
+      }
+    }
+  ]
+}

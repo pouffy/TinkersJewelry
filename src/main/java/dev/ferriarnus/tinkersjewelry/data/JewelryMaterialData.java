@@ -28,10 +28,10 @@ public class JewelryMaterialData extends AbstractMaterialDataProvider {
 		material(JewelryMaterials.quartz).tier(2).sort(ORDER_SPECIAL).craftable(true);
 		material(JewelryMaterials.heart_of_the_sea).tier(2).sort(ORDER_SPECIAL).craftable(true);
 
-		material(JewelryMaterials.ichor_crystal).tier(2).sort(ORDER_SPECIAL).craftable(true);
-		material(JewelryMaterials.ender_crystal).tier(2).sort(ORDER_SPECIAL).craftable(true);
-		material(JewelryMaterials.earth_crystal).tier(2).sort(ORDER_SPECIAL).craftable(true);
-		material(JewelryMaterials.sky_crystal).tier(2).sort(ORDER_SPECIAL).craftable(true);
+		//material(JewelryMaterials.ichor_crystal).tier(2).sort(ORDER_SPECIAL).craftable(true);
+		//material(JewelryMaterials.ender_crystal).tier(2).sort(ORDER_SPECIAL).craftable(true);
+		//material(JewelryMaterials.earth_crystal).tier(2).sort(ORDER_SPECIAL).craftable(true);
+		//material(JewelryMaterials.sky_crystal).tier(2).sort(ORDER_SPECIAL).craftable(true);
 
 		material(JewelryMaterials.eudialyte).tier(2).sort(ORDER_SPECIAL).craftable(true);
 		material(JewelryMaterials.malachite).tier(2).sort(ORDER_SPECIAL).craftable(true);

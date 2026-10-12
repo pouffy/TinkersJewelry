@@ -69,10 +69,10 @@ public class JewelryMaterialRecipe extends RecipeProvider implements IMaterialRe
 		optionalMaterialRecipe(consumer, JewelryMaterials.xychorium_gem_dark, JewelryMaterials.Tags.DARK_XYCHORIUM, 1, 1, folder + "gems/xychorium_gem_dark");
 
 		materialRecipe(consumer, JewelryMaterials.hematite, Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation("tinkers_things", "hematite"))), 1, 1, folder + "gems/hematite");
-		materialRecipe(consumer, JewelryMaterials.ichor_crystal, Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation(TConstruct.MOD_ID, "ichor_slime_crystal"))), 1, 1, folder + "gems/ichor_slime_crystal");
-		materialRecipe(consumer, JewelryMaterials.earth_crystal, Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation(TConstruct.MOD_ID, "earth_slime_crystal"))), 1, 1, folder + "gems/earth_slime_crystal");
-		materialRecipe(consumer, JewelryMaterials.sky_crystal, Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation(TConstruct.MOD_ID, "sky_slime_crystal"))), 1, 1, folder + "gems/sky_slime_crystal");
-		materialRecipe(consumer, JewelryMaterials.ender_crystal, Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation(TConstruct.MOD_ID, "ender_slime_crystal"))), 1, 1, folder + "gems/ender_slime_crystal");
+		//materialRecipe(consumer, JewelryMaterials.ichor_crystal, Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation(TConstruct.MOD_ID, "ichor_slime_crystal"))), 1, 1, folder + "gems/ichor_slime_crystal");
+		//materialRecipe(consumer, JewelryMaterials.earth_crystal, Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation(TConstruct.MOD_ID, "earth_slime_crystal"))), 1, 1, folder + "gems/earth_slime_crystal");
+		//materialRecipe(consumer, JewelryMaterials.sky_crystal, Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation(TConstruct.MOD_ID, "sky_slime_crystal"))), 1, 1, folder + "gems/sky_slime_crystal");
+		//materialRecipe(consumer, JewelryMaterials.ender_crystal, Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation(TConstruct.MOD_ID, "ender_slime_crystal"))), 1, 1, folder + "gems/ender_slime_crystal");
 
 	}
 

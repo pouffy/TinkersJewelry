@@ -18,22 +18,21 @@ import top.theillusivec4.curios.api.SlotContext;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class CleanseGemModifier extends AbstractGemModifier{
+public class CleanseGemModifier extends AbstractGemModifier {
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack, ModifierEntry entry) {
-        LivingEntity entity = slotContext.entity();
-        if (entity == null) {
+    public void curioTick(IToolStackView tool, ModifierEntry entry, String slotId, int slotIndex, LivingEntity wearer, ItemStack stack) {
+        if (wearer == null) {
             return;
         }
-        List<MobEffectInstance> badEffects = entity.getActiveEffects().stream().filter(e -> !e.getEffect().isBeneficial()).toList();
+        List<MobEffectInstance> badEffects = wearer.getActiveEffects().stream().filter(e -> !e.getEffect().isBeneficial()).toList();
         ToolStack toolStack = ToolStack.from(stack);
         int level = toolStack.getModifierLevel(JewelryModifiers.CLEANSE_GEM.getId());
         float amp = toolStack.getStats().get(JewelryToolStats.AMPLIFICATION);
         for (MobEffectInstance effect : badEffects) {
             int duration = effect.getDuration();
-            entity.removeEffect(effect.getEffect());
-            damageTool(stack, Mth.ceil(duration / (300f * level * amp)), entity);
+            wearer.removeEffect(effect.getEffect());
+            damageTool(stack, Mth.ceil(duration / (300f * level * amp)), wearer);
             if (ToolStack.from(stack).isBroken()) {
                 break;
             }

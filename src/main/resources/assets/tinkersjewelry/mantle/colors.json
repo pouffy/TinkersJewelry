@@ -41,7 +41,12 @@
     "magnetic": "#720000",
     "invariant": "#A3B1A8",
     "temperate": "#9C5643",
-    "overwield": "#B771FF"
+    "overwield": "#B771FF",
+
+    "overgrowth_gem": "#82c873",
+    "skyfall_gem": "#00F4DA",
+    "godspeed_gem": "#ff970d",
+    "enderdodging_gem": "#CC00FA"
   },
 
   "material.tinkersjewelry": {

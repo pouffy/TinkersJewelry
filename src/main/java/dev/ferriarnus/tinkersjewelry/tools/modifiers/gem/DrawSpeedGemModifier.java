@@ -25,10 +25,10 @@ import java.util.UUID;
 public class DrawSpeedGemModifier extends AbstractGemModifier{
 
     @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack, ModifierEntry modifier) {
-        Multimap<Attribute, AttributeModifier> attributeModifiers = super.getAttributeModifiers(slotContext, uuid, stack, modifier);
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(IToolStackView tool, ModifierEntry entry, String slotId, int slotIndex, LivingEntity wearer, UUID uuid, ItemStack stack) {
+        Multimap<Attribute, AttributeModifier> attributeModifiers = super.getAttributeModifiers(tool, entry, slotId, slotIndex, wearer, uuid, stack);
         ToolStack toolStack = ToolStack.from(stack);
-        int level = toolStack.getModifierLevel(modifier.getId());
+        int level = toolStack.getModifierLevel(entry.getId());
         float amp = toolStack.getStats().get(JewelryToolStats.AMPLIFICATION);
         double effect = 0.25 * level * amp;
         attributeModifiers.put(ALObjects.Attributes.DRAW_SPEED.get(), new AttributeModifier(uuid, "tinkersjewelry:drawspeedgem", effect, AttributeModifier.Operation.MULTIPLY_BASE));

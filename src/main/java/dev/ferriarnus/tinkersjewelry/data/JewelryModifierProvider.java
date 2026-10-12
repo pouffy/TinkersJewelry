@@ -6,15 +6,21 @@ import dev.ferriarnus.tinkersjewelry.tools.modules.*;
 import dev.ferriarnus.tinkersjewelry.tools.stats.JewelryToolStats;
 import dev.shadowsoffire.attributeslib.api.ALObjects;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraftforge.common.ForgeMod;
+import slimeknights.mantle.data.predicate.IJsonPredicate;
+import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
+import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.json.variable.tool.ModDataSource;
 import slimeknights.tconstruct.library.json.variable.tool.ModDataVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolStatVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
+import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.ModifierRequirementsModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.ModifierSlotModule;
@@ -23,9 +29,12 @@ import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.modifiers.util.ModifierTooltip;
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
+import slimeknights.tconstruct.shared.TinkerAttributes;
 import slimeknights.tconstruct.shared.TinkerEffects;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
+import slimeknights.tconstruct.tools.modules.OvergrowthModule;
+import slimeknights.tconstruct.tools.modules.armor.TeleportDodgeModule;
 
 import static slimeknights.tconstruct.library.json.math.ModifierFormula.*;
 
@@ -409,6 +418,55 @@ public class JewelryModifierProvider extends AbstractModifierProvider {
                         .customVariable("amplification", new ToolStatVariable(JewelryToolStats.AMPLIFICATION))
                         .formula()
                         .variable(LEVEL).build())
+                .showInTooltips(ModifierTooltip.ShowInTooltips.ALWAYS);
+
+        buildModifier(JewelryModifiers.OVERGROWTH_GEM)
+                .addModule(new OvergrowthCurioModule(LevelingValue.eachLevel(0.05f)))
+                .showInTooltips(ModifierTooltip.ShowInTooltips.ALWAYS);
+
+        buildModifier(JewelryModifiers.SKYFALL_GEM)
+                .levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL)
+                .addModule(AttributeModifierModule.builder(ForgeMod.ENTITY_GRAVITY.get(), AttributeModifier.Operation.MULTIPLY_TOTAL)
+                        .uniqueFrom(JewelryModifiers.SKYFALL_GEM)
+                        .customVariable("amplification", new ToolStatVariable(JewelryToolStats.AMPLIFICATION))
+                        .formula()
+                        .variable(LEVEL).constant(-0.05f).multiply()
+                        .customVariable("amplification").multiply().build())
+                .addModule(AttributeModifierModule.builder(TinkerAttributes.SAFE_FALL_DISTANCE.get(), AttributeModifier.Operation.ADDITION)
+                        .uniqueFrom(JewelryModifiers.SKYFALL_GEM)
+                        .customVariable("amplification", new ToolStatVariable(JewelryToolStats.AMPLIFICATION))
+                        .formula()
+                        .variable(LEVEL).constant(1).add()
+                        .customVariable("amplification").multiply().build())
+                .showInTooltips(ModifierTooltip.ShowInTooltips.ALWAYS);
+
+        buildModifier(JewelryModifiers.GODSPEED_GEM)
+                .levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL)
+                .addModule(AttributeModifierModule.builder(Attributes.ATTACK_SPEED, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                        .uniqueFrom(JewelryModifiers.GODSPEED_GEM)
+                        .customVariable("amplification", new ToolStatVariable(JewelryToolStats.AMPLIFICATION))
+                        .formula()
+                        .variable(LEVEL).constant(0.015f).multiply()
+                        .customVariable("amplification").multiply().build())
+                .addModule(AttributeModifierModule.builder(Attributes.MOVEMENT_SPEED, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                        .uniqueFrom(JewelryModifiers.GODSPEED_GEM)
+                        .customVariable("amplification", new ToolStatVariable(JewelryToolStats.AMPLIFICATION))
+                        .formula()
+                        .variable(LEVEL).constant(0.025f).multiply()
+                        .customVariable("amplification").multiply().build())
+                .addModule(AttributeModifierModule.builder(TinkerAttributes.MINING_SPEED_MULTIPLIER.get(), AttributeModifier.Operation.MULTIPLY_TOTAL)
+                        .uniqueFrom(JewelryModifiers.GODSPEED_GEM)
+                        .customVariable("amplification", new ToolStatVariable(JewelryToolStats.AMPLIFICATION))
+                        .formula()
+                        .variable(LEVEL).constant(0.05f).multiply()
+                        .customVariable("amplification").multiply().build())
+                .showInTooltips(ModifierTooltip.ShowInTooltips.ALWAYS);
+
+        IJsonPredicate<DamageSource> isProjectile = DamageSourcePredicate.tag(DamageTypeTags.IS_PROJECTILE);
+        buildModifier(JewelryModifiers.ENDERDODGING_GEM).priority(50)
+                .levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL)
+                .addModule(TeleportDodgeCurioModule.builder().damageSource(isProjectile).chance(LevelingValue.eachLevel(0.15f)).flat(10 * 20))
+                .addModule(TeleportDodgeCurioModule.builder().damageSource(DamageSourcePredicate.and(DamageSourcePredicate.HAS_ENTITY, isProjectile.inverted())).chance(LevelingValue.eachLevel(0.075f)).flat(10 * 20))
                 .showInTooltips(ModifierTooltip.ShowInTooltips.ALWAYS);
     }
 

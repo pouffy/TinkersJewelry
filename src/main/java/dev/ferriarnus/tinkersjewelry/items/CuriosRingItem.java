@@ -25,7 +25,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-public class CuriosRingItem extends ModifiableItem implements ICurioItem{
+public class CuriosRingItem extends ModifiableItem implements ICurioItem {
 
 	public CuriosRingItem(Properties properties, ToolDefinition toolDefinition) {
 		super(properties, toolDefinition);
@@ -37,17 +37,6 @@ public class CuriosRingItem extends ModifiableItem implements ICurioItem{
 		TooltipBuilder builder = new TooltipBuilder(tool, list);
 		builder.add(JewelryToolStats.AMPLIFICATION);
 		return builder.getTooltips();
-	}
-
-	@Override
-	public void curioTick(SlotContext slotContext, ItemStack stack) {
-		ToolStack tool = ToolStack.from(stack);
-		if (tool.isBroken()) {
-			return;
-		}
-		for (ModifierEntry entry: tool.getModifierList()) {
-			entry.getHook(CuriosModifierHooks.TICK).curioTick(slotContext, stack, entry);
-		}
 	}
 	
 	@Override
@@ -109,22 +98,6 @@ public class CuriosRingItem extends ModifiableItem implements ICurioItem{
 			}
 		}
 		return true;
-	}
-
-	@Override
-	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
-		ToolStack tool = ToolStack.from(stack);
-		Multimap<Attribute, AttributeModifier> multimap = HashMultimap.create();
-		if (tool.isBroken()) {
-			return multimap;
-		}
-		if (tool.isBroken()) {
-			return multimap;
-		}
-		for (ModifierEntry entry : tool.getModifierList()) {
-			multimap.putAll(entry.getHook(CuriosModifierHooks.ATTRIBUTE).getAttributeModifiers(slotContext, uuid, stack, entry));
-		}
-		return multimap;
 	}
 	
 	@Override

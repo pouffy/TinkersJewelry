@@ -5,10 +5,10 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "tinkersjewelry.refmap.json",
   "mixins": [
-    "MixinVillager",
     "MixinApplyBonusCount",
     "MixinItemPredicate",
-    "MixinMatchTool"
+    "MixinMatchTool",
+    "MixinVillager"
   ],
   "injectors": {
     "defaultRequire": 1

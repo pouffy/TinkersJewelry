@@ -6,6 +6,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -24,8 +25,8 @@ public class FlyGemModifier extends AbstractGemModifier {
     private boolean wasGround = true;
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack, ModifierEntry entry) {
-        if (!(slotContext.entity() instanceof Player player)) {
+    public void curioTick(IToolStackView tool, ModifierEntry entry, String slotId, int slotIndex, LivingEntity wearer, ItemStack stack) {
+        if (!(wearer instanceof Player player)) {
             return;
         }
 

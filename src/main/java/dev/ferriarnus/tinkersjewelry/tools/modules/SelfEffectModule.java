@@ -19,8 +19,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
-import slimeknights.tconstruct.library.tools.nbt.ToolStack;
-import top.theillusivec4.curios.api.SlotContext;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 import java.util.function.Function;
@@ -46,19 +45,17 @@ public record SelfEffectModule(MobEffect effect, ToolFormula duration, ToolFormu
         return DEFAULT_HOOKS;
     }
 
-    @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack, ModifierEntry entry) {
-        LivingEntity entity = slotContext.entity();
-        ToolStack tool = ToolStack.from(stack);
-        int i = Mth.floor(duration.apply(tool, entry));
-        if (!entity.hasEffect(effect) || entity.getEffect(effect).getDuration() < i / 2) {
-            entity.addEffect(new MobEffectInstance(effect, i, Mth.floor(amplification.apply(tool, entry)), false, false));
-            ToolDamageUtil.damage(tool, Math.round(damage.apply(tool, entry)), entity, stack);
-        }
-    }
-
     public static Builder builder(MobEffect effect) {
         return new Builder(effect);
+    }
+
+    @Override
+    public void curioTick(IToolStackView tool, ModifierEntry entry, String slotId, int slotIndex, LivingEntity wearer, ItemStack stack) {
+        int i = Mth.floor(duration.apply(tool, entry));
+        if (!wearer.hasEffect(effect) || wearer.getEffect(effect).getDuration() < i / 2) {
+            wearer.addEffect(new MobEffectInstance(effect, i, Mth.floor(amplification.apply(tool, entry)), false, false));
+            ToolDamageUtil.damage(tool, Math.round(damage.apply(tool, entry)), wearer, stack);
+        }
     }
 
     public static class Builder extends VariableFormula.Builder<Builder, SelfEffectModule, ToolVariable> {

@@ -1,0 +1,62 @@
+{
+  "level_display": "tconstruct:single_level",
+  "modules": [
+    {
+      "type": "tinkersjewelry:attribute_modifier",
+      "attribute": "minecraft:generic.attack_speed",
+      "formula": [
+        "$level",
+        0.015,
+        "*",
+        "$amplification",
+        "*"
+      ],
+      "operation": "multiply_total",
+      "unique": "tinkersjewelry.modifier.godspeed_gem",
+      "variables": {
+        "amplification": {
+          "type": "tconstruct:tool_stat",
+          "stat": "tinkersjewelry:amplification"
+        }
+      }
+    },
+    {
+      "type": "tinkersjewelry:attribute_modifier",
+      "attribute": "minecraft:generic.movement_speed",
+      "formula": [
+        "$level",
+        0.025,
+        "*",
+        "$amplification",
+        "*"
+      ],
+      "operation": "multiply_total",
+      "unique": "tinkersjewelry.modifier.godspeed_gem",
+      "variables": {
+        "amplification": {
+          "type": "tconstruct:tool_stat",
+          "stat": "tinkersjewelry:amplification"
+        }
+      }
+    },
+    {
+      "type": "tinkersjewelry:attribute_modifier",
+      "attribute": "tconstruct:player.mining_speed_multiplier",
+      "formula": [
+        "$level",
+        0.05,
+        "*",
+        "$amplification",
+        "*"
+      ],
+      "operation": "multiply_total",
+      "unique": "tinkersjewelry.modifier.godspeed_gem",
+      "variables": {
+        "amplification": {
+          "type": "tconstruct:tool_stat",
+          "stat": "tinkersjewelry:amplification"
+        }
+      }
+    }
+  ]
+}

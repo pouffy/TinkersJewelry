@@ -89,10 +89,10 @@ public class JewelryMaterialStatsData extends AbstractMaterialStatsDataProvider 
 		addMaterialStats(JewelryMaterials.xychorium_gem_dark, GemMaterialStats.INSTANCE);
 
 		addMaterialStats(JewelryMaterials.hematite, GemMaterialStats.INSTANCE);
-		addMaterialStats(JewelryMaterials.ichor_crystal, GemMaterialStats.INSTANCE);
-		addMaterialStats(JewelryMaterials.ender_crystal, GemMaterialStats.INSTANCE);
-		addMaterialStats(JewelryMaterials.sky_crystal, GemMaterialStats.INSTANCE);
-		addMaterialStats(JewelryMaterials.earth_crystal, GemMaterialStats.INSTANCE);
+		addMaterialStats(MaterialIds.ichor, GemMaterialStats.INSTANCE);
+		addMaterialStats(MaterialIds.enderslime, GemMaterialStats.INSTANCE);
+		addMaterialStats(MaterialIds.skyslime, GemMaterialStats.INSTANCE);
+		addMaterialStats(MaterialIds.earthslime, GemMaterialStats.INSTANCE);
 
 		addMaterialStats(MaterialIds.rock, GemMaterialStats.INSTANCE);
 		addMaterialStats(MaterialIds.flint, GemMaterialStats.INSTANCE);

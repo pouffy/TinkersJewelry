@@ -41,10 +41,10 @@ public class JewelryMaterialRenderInfo extends AbstractMaterialRenderInfoProvide
 		buildRenderInfo(JewelryMaterials.prismarine_crystal).color(0xb4d8ca);
 		buildRenderInfo(JewelryMaterials.purpur).color(0xac7bac);
 
-		buildRenderInfo(JewelryMaterials.ichor_crystal).color(0xff970d);
-		buildRenderInfo(JewelryMaterials.earth_crystal).color(0x01cd4e);
-		buildRenderInfo(JewelryMaterials.sky_crystal).color(0x01cbcd);
-		buildRenderInfo(JewelryMaterials.ender_crystal).color(0xaf4cf6);
+		//buildRenderInfo(JewelryMaterials.ichor_crystal).color(0xff970d);
+		//buildRenderInfo(JewelryMaterials.earth_crystal).color(0x01cd4e);
+		//buildRenderInfo(JewelryMaterials.sky_crystal).color(0x01cbcd);
+		//buildRenderInfo(JewelryMaterials.ender_crystal).color(0xaf4cf6);
 
 		buildRenderInfo(JewelryMaterials.eudialyte).color(0x851228);
 		buildRenderInfo(JewelryMaterials.malachite).color(0x055938);

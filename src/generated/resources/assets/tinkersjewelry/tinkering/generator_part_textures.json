@@ -13,7 +13,11 @@
       "tconstruct:seared_stone",
       "tconstruct:ender_pearl",
       "tconstruct:whitestone",
-      "tconstruct:necronium"
+      "tconstruct:necronium",
+      "tconstruct:ichor",
+      "tconstruct:enderslime",
+      "tconstruct:skyslime",
+      "tconstruct:earthslime"
     ],
     "tinkersjewelry:plain_ring": [
       "tconstruct:copper",

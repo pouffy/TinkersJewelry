@@ -20,6 +20,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import top.theillusivec4.curios.api.SlotContext;
 
@@ -29,13 +30,13 @@ import java.util.UUID;
 public abstract class AbstractGemModifier extends Modifier implements TooltipModifierHook, CuriosEquipHook, CuriosTickHook, AttributeModifierHook, HurtUserHook, HurtEnemyHook, BlockBreakHook {
 
 	@Override
-	public void curioTick(SlotContext slotContext, ItemStack stack, ModifierEntry entry) {
-		
+	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(IToolStackView tool, ModifierEntry entry, String slotId, int slotIndex, LivingEntity wearer, UUID uuid, ItemStack stack) {
+		return HashMultimap.create();
 	}
 
 	@Override
-	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack, ModifierEntry modifier) {
-		return HashMultimap.create();
+	public void curioTick(IToolStackView tool, ModifierEntry entry, String slotId, int slotIndex, LivingEntity wearer, ItemStack stack) {
+
 	}
 
 	@Override
