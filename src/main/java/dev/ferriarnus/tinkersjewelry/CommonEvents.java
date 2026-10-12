@@ -1,6 +1,7 @@
 package dev.ferriarnus.tinkersjewelry;
 
 import com.google.common.collect.Multimap;
+import dev.ferriarnus.tinkersjewelry.tools.hooks.CurioModifyDamageHook;
 import dev.ferriarnus.tinkersjewelry.tools.hooks.CuriosModifierHooks;
 import dev.ferriarnus.tinkersjewelry.tools.modifiers.JewelryModifiers;
 import net.minecraft.core.NonNullList;
@@ -84,13 +85,11 @@ public class CommonEvents {
         DamageSource source = event.getSource();
         float amount = event.getAmount();
         EquipmentContext context = new EquipmentContext(entity);
-        getModifiableCurios(event.getEntity()).forEach(p -> asTool(p.getFirst(), (tool) -> {
-            if (!tool.isBroken()) {
-                for (ModifierEntry entry : tool.getModifierList()) {
-                    entry.getHook(CuriosModifierHooks.MODIFY_HURT).modifyDamageTaken(tool, p.getFirst(), entry, context, p.getSecond().identifier(), p.getSecond().index(), source, amount, OnAttackedModifierHook.isDirectDamage(source));
-                }
-            }
-        }));
+        amount = CurioModifyDamageHook.modifyDamageTaken(CuriosModifierHooks.MODIFY_HURT, context, source, amount, OnAttackedModifierHook.isDirectDamage(source));
+        event.setAmount(amount);
+        if (amount <= 0) {
+            event.setCanceled(true);
+        }
     }
 
     private static final String SOULBOUND_SLOT = "curios_soulbound";

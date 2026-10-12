@@ -37,8 +37,6 @@ public interface CurioModifyDamageHook {
                 String identifier = entry.getKey();
                 IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                 for (int i = 0; i < stacksHandler.getSlots(); ++i) {
-                    NonNullList<Boolean> renderStates = stacksHandler.getRenders();
-                    SlotContext slotContext = new SlotContext(identifier, context.getEntity(), i, false, renderStates.size() > i && renderStates.get(i));
                     ItemStack stack = stackHandler.getStackInSlot(i);
                     if (!stack.isEmpty() && isTool(stack)) {
                         ToolStack tool = ToolStack.from(stack);
