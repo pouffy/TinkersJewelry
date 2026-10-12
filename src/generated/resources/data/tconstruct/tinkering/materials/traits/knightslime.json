@@ -1,0 +1,14 @@
+{
+  "perStat": {
+    "tinkersjewelry:plain_ring": [
+      {
+        "level": 1,
+        "name": "tinkersjewelry:overwield"
+      },
+      {
+        "level": 1,
+        "name": "tconstruct:overslime"
+      }
+    ]
+  }
+}

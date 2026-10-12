@@ -11,6 +11,8 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraftforge.common.ForgeMod;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
+import slimeknights.tconstruct.library.json.variable.tool.ModDataSource;
+import slimeknights.tconstruct.library.json.variable.tool.ModDataVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolStatVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
@@ -22,6 +24,7 @@ import slimeknights.tconstruct.library.modifiers.util.ModifierTooltip;
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.shared.TinkerEffects;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 
 import static slimeknights.tconstruct.library.json.math.ModifierFormula.*;
@@ -359,6 +362,17 @@ public class JewelryModifierProvider extends AbstractModifierProvider {
                         .customVariable("amplification").multiply().build())
                 .addModule(HurtEnemyModule.builder()
                         .flat(1))
+                .showInTooltips(ModifierTooltip.ShowInTooltips.ALWAYS);
+
+        buildModifier(JewelryModifiers.OVERWIELD)
+                .addModule(ConditionalStatModule.stat(JewelryToolStats.AMPLIFICATION)
+                        .formula()
+                        .customVariable("overslime", new ModDataVariable(TinkerModifiers.overslime.getId(), ModDataSource.PERSISTENT))
+                        .variable(LEVEL).min() // must have 1 overslime per level
+                        .constant(0.1f).multiply()
+                        .variable(MULTIPLIER).multiply()
+                        .variable(VALUE).add()
+                        .build())
                 .showInTooltips(ModifierTooltip.ShowInTooltips.ALWAYS);
 
 

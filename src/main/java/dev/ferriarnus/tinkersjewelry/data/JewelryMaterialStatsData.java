@@ -49,6 +49,7 @@ public class JewelryMaterialStatsData extends AbstractMaterialStatsDataProvider 
 		addMaterialStats(MaterialIds.queensSlime, new BlankBandMaterialStats(1650, 1f));
 		addMaterialStats(MaterialIds.hepatizon, new BlankBandMaterialStats(975, 1.3f));
 		addMaterialStats(MaterialIds.manyullyn, new BlankBandMaterialStats(1250, 1.2f));
+		addMaterialStats(MaterialIds.knightslime, new BlankBandMaterialStats(1047, 1.1f));
 
 		addMaterialStats(JewelryMaterials.redstone, GemMaterialStats.INSTANCE);
 		addMaterialStats(JewelryMaterials.eudialyte, GemMaterialStats.INSTANCE);

@@ -1,6 +1,7 @@
 {
   "overrides": {
     "tinkersjewelry:gem": [
+      "tinkers_things:hematite",
       "tconstruct:rock",
       "tconstruct:flint",
       "tconstruct:obsidian",
@@ -37,7 +38,9 @@
       "tconstruct:queens_slime",
       "tconstruct:cobalt",
       "tconstruct:hepatizon",
-      "tinkers_things:hematite"
+      "tconstruct:knightslime",
+      "tconstruct:copper_oxidized",
+      "tconstruct:iron_oxidized"
     ]
   },
   "parts": [

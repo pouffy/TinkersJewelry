@@ -2,7 +2,6 @@ package dev.ferriarnus.tinkersjewelry.tools.stats;
 
 import dev.ferriarnus.tinkersjewelry.TinkersJewelry;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatType;
@@ -14,7 +13,7 @@ import java.util.List;
 
 public record GemMaterialStats() implements IMaterialStats {
 	
-	public static final MaterialStatsId ID = new MaterialStatsId(new ResourceLocation(TinkersJewelry.MODID, "gem"));
+	public static final MaterialStatsId ID = new MaterialStatsId(TinkersJewelry.getResource("gem"));
 	public static final GemMaterialStats INSTANCE = new GemMaterialStats();
 	public static final MaterialStatType<GemMaterialStats> TYPE = new MaterialStatType<>(ID, INSTANCE, new SingletonLoader<>(INSTANCE));
 	private static final List<Component> EMPTY = Collections.singletonList(Component.empty());

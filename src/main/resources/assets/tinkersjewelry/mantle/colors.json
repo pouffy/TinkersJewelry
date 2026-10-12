@@ -40,7 +40,8 @@
     "ductile": "#67718C",
     "magnetic": "#720000",
     "invariant": "#A3B1A8",
-    "temperate": "#9C5643"
+    "temperate": "#9C5643",
+    "overwield": "#B771FF"
   },
 
   "material.tinkersjewelry": {

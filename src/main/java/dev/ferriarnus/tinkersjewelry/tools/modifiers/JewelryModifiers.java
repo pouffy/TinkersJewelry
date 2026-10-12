@@ -19,6 +19,7 @@ public class JewelryModifiers {
 	public static final ModifierId MAINTAINED = id("maintained");
 	public static final ModifierId DUCTILE = id("ductile");
 	public static final ModifierId SUBSPACE = id("subspace");
+	public static final ModifierId OVERWIELD = id("overwield");
 
 	public static final ModifierId ANTI_HEAL_GEM = id("antiheal_gem");
 	public static final ModifierId ARMOR_GEM = id("armor_gem");

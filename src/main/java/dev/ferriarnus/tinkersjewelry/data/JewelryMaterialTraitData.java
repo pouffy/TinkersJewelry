@@ -100,6 +100,7 @@ public class JewelryMaterialTraitData extends AbstractMaterialTraitDataProvider 
 		addTraits(MaterialIds.pigIron, BlankBandMaterialStats.ID, ModifierIds.tasty );
 		addTraits(MaterialIds.roseGold, BlankBandMaterialStats.ID, new ModifierEntry(JewelryModifiers.PRECIOUS, 1), new ModifierEntry(ModifierIds.enhanced, 1));
 		addTraits(MaterialIds.cobalt, BlankBandMaterialStats.ID, new ModifierEntry[] {} ); //remove trait
+		addTraits(MaterialIds.knightslime, BlankBandMaterialStats.ID, new ModifierEntry(JewelryModifiers.OVERWIELD, 1), new ModifierEntry(TinkerModifiers.overslime, 1));
 
 		addTraits(MaterialIds.steel, BlankBandMaterialStats.ID, JewelryModifiers.DUCTILE);
 		addTraits(MaterialIds.bronze, BlankBandMaterialStats.ID, JewelryModifiers.MAINTAINED);

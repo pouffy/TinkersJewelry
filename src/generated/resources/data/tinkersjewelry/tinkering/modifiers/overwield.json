@@ -1,0 +1,28 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_stat",
+      "formula": [
+        "$overslime",
+        "$level",
+        "min",
+        0.1,
+        "*",
+        "$multiplier",
+        "*",
+        "$value",
+        "+"
+      ],
+      "percent": false,
+      "stat": "tinkersjewelry:amplification",
+      "variables": {
+        "overslime": {
+          "type": "tconstruct:mod_data",
+          "key": "tconstruct:overslime",
+          "source": "persistent"
+        }
+      }
+    }
+  ]
+}

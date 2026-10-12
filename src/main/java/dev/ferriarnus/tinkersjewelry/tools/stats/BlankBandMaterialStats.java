@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import dev.ferriarnus.tinkersjewelry.TinkersJewelry;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import slimeknights.mantle.data.loadable.primitive.FloatLoadable;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.tconstruct.library.materials.stats.IRepairableMaterialStats;
@@ -18,7 +17,7 @@ import java.util.Objects;
 
 public record BlankBandMaterialStats(int durability, float amplification) implements IRepairableMaterialStats {
 	
-	public static final MaterialStatsId ID = new MaterialStatsId(new ResourceLocation(TinkersJewelry.MODID, "plain_ring"));
+	public static final MaterialStatsId ID = new MaterialStatsId(TinkersJewelry.getResource("plain_ring"));
 	public static final MaterialStatType<BlankBandMaterialStats> TYPE = new MaterialStatType<>(ID, new BlankBandMaterialStats(100, 1f),
 			RecordLoadable.create(IRepairableMaterialStats.DURABILITY_FIELD, FloatLoadable.FROM_ZERO.requiredField("amplification", BlankBandMaterialStats::amplification), BlankBandMaterialStats::new));
 	private static final List<Component> DESCRIPTION = ImmutableList.of(ToolStats.DURABILITY.getDescription(), JewelryToolStats.AMPLIFICATION.getDescription());
