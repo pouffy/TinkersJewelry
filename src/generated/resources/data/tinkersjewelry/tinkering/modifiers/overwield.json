@@ -7,7 +7,7 @@
         "$overslime",
         "$level",
         "min",
-        0.1,
+        0.25,
         "*",
         "$multiplier",
         "*",

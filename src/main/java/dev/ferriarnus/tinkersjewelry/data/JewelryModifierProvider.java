@@ -369,7 +369,7 @@ public class JewelryModifierProvider extends AbstractModifierProvider {
                         .formula()
                         .customVariable("overslime", new ModDataVariable(TinkerModifiers.overslime.getId(), ModDataSource.PERSISTENT))
                         .variable(LEVEL).min() // must have 1 overslime per level
-                        .constant(0.1f).multiply()
+                        .constant(0.25f).multiply()
                         .variable(MULTIPLIER).multiply()
                         .variable(VALUE).add()
                         .build())
