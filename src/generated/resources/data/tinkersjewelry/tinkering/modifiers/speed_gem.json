@@ -16,6 +16,7 @@
         "*"
       ],
       "operation": "addition",
+      "tooltip_style": "percent",
       "unique": "tinkersjewelry.modifier.speed_gem",
       "variables": {
         "amplification": {

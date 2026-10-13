@@ -12,6 +12,7 @@
         "*"
       ],
       "operation": "addition",
+      "tooltip_style": "percent",
       "unique": "tinkersjewelry.modifier.mining_speed_gem",
       "variables": {
         "amplification": {

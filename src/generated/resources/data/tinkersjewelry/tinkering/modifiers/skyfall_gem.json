@@ -12,6 +12,7 @@
         "*"
       ],
       "operation": "multiply_total",
+      "tooltip_style": "percent",
       "unique": "tinkersjewelry.modifier.skyfall_gem",
       "variables": {
         "amplification": {

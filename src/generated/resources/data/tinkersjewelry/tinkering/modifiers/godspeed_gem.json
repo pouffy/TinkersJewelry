@@ -12,6 +12,7 @@
         "*"
       ],
       "operation": "multiply_total",
+      "tooltip_style": "percent",
       "unique": "tinkersjewelry.modifier.godspeed_gem",
       "variables": {
         "amplification": {
@@ -31,6 +32,7 @@
         "*"
       ],
       "operation": "multiply_total",
+      "tooltip_style": "percent",
       "unique": "tinkersjewelry.modifier.godspeed_gem",
       "variables": {
         "amplification": {
@@ -50,6 +52,7 @@
         "*"
       ],
       "operation": "multiply_total",
+      "tooltip_style": "percent",
       "unique": "tinkersjewelry.modifier.godspeed_gem",
       "variables": {
         "amplification": {

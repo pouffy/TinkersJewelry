@@ -10,6 +10,7 @@
         "*"
       ],
       "operation": "addition",
+      "tooltip_style": "boost",
       "unique": "tinkersjewelry.modifier.luck_gem",
       "variables": {
         "amplification": {

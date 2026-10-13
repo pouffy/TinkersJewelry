@@ -12,6 +12,7 @@
         "*"
       ],
       "operation": "addition",
+      "tooltip_style": "percent",
       "unique": "tinkersjewelry.modifier.gravity_gem",
       "variables": {
         "amplification": {

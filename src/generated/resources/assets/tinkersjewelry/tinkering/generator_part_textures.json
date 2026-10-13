@@ -17,7 +17,10 @@
       "tconstruct:ichor",
       "tconstruct:enderslime",
       "tconstruct:skyslime",
-      "tconstruct:earthslime"
+      "tconstruct:earthslime",
+      "tconstruct:magnetite",
+      "tconstruct:kobold",
+      "tconstruct:knightly"
     ],
     "tinkersjewelry:plain_ring": [
       "tconstruct:copper",

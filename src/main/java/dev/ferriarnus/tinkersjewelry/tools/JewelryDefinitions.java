@@ -66,6 +66,10 @@ public class JewelryDefinitions {
 		cutGemMaterials.add(MaterialIds.skyslime);
 		cutGemMaterials.add(MaterialIds.earthslime);
 
+		cutGemMaterials.add(MaterialIds.magnetite);
+		cutGemMaterials.add(MaterialIds.kobold);
+		cutGemMaterials.add(MaterialIds.knightly);
+
 		//Variants
 		plainRingMaterials.add(MaterialIds.oxidizedCopper);
 		plainRingMaterials.add(MaterialIds.oxidizedIron);

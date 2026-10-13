@@ -16,6 +16,7 @@
         "*"
       ],
       "operation": "addition",
+      "tooltip_style": "percent",
       "unique": "tinkersjewelry.modifier.rage_gem",
       "variables": {
         "amplification": {

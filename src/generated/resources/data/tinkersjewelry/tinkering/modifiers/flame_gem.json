@@ -10,6 +10,7 @@
         "*"
       ],
       "operation": "addition",
+      "tooltip_style": "boost",
       "unique": "tinkersjewelry.modifier.flame_gem",
       "variables": {
         "amplification": {

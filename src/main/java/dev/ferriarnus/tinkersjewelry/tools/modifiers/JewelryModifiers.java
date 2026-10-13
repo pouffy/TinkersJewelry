@@ -56,6 +56,9 @@ public class JewelryModifiers {
 	public static final ModifierId GODSPEED_GEM = id("godspeed_gem");
 	public static final ModifierId ENDERDODGING_GEM = id("enderdodging_gem");
 
+	public static final ModifierId COBALAMIN_GEM = id("cobalamin_gem");
+	public static final ModifierId LOYAL_GEM = id("loyal_gem");
+
 	public static final StaticModifier<FlyGemModifier> FLY_GEM = MODIFIERS.register("fly_gem", FlyGemModifier::new);
 	public static final StaticModifier<CleanseGemModifier> CLEANSE_GEM = MODIFIERS.register("cleanse_gem", CleanseGemModifier::new);
 	public static final StaticModifier<DrawSpeedGemModifier> DRAW_SPEED_GEM = MODIFIERS.register("draw_speed_gem", DrawSpeedGemModifier::new);

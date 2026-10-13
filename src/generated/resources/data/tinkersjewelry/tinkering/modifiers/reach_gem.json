@@ -10,6 +10,7 @@
         "*"
       ],
       "operation": "addition",
+      "tooltip_style": "boost",
       "unique": "tinkersjewelry.modifier.reach_gem",
       "variables": {
         "amplification": {
@@ -27,6 +28,7 @@
         "*"
       ],
       "operation": "addition",
+      "tooltip_style": "boost",
       "unique": "tinkersjewelry.modifier.reach_gem",
       "variables": {
         "amplification": {

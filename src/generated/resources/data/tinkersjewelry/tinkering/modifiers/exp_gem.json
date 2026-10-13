@@ -12,6 +12,7 @@
         "*"
       ],
       "operation": "addition",
+      "tooltip_style": "boost",
       "unique": "tinkersjewelry.modifier.exp_gem",
       "variables": {
         "amplification": {

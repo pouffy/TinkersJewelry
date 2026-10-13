@@ -12,6 +12,7 @@
         "*"
       ],
       "operation": "addition",
+      "tooltip_style": "percent",
       "unique": "tinkersjewelry.modifier.current_health_damage_gem",
       "variables": {
         "amplification": {

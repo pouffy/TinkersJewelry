@@ -14,6 +14,7 @@
         "+"
       ],
       "operation": "addition",
+      "tooltip_style": "percent",
       "unique": "tinkersjewelry.modifier.armor_gem",
       "variables": {
         "amplification": {

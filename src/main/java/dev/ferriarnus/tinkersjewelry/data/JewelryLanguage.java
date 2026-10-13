@@ -170,6 +170,9 @@ public class JewelryLanguage extends LanguageProvider {
         forModifier(JewelryModifiers.SKYFALL_GEM, "Skyfall", "Falling with style!", "Reduces the effect of gravity");
         forModifier(JewelryModifiers.GODSPEED_GEM, "Godspeed", "Gotta go fast!", "Increases movement, attack and mining speed");
         forModifier(JewelryModifiers.ENDERDODGING_GEM, "Enderdodging", "Agility of an enderman", "Adds a chance of dodging attacks by teleporting, with a higher chance on projectiles");
+
+        forModifier(JewelryModifiers.COBALAMIN_GEM, "Cobalamin", "An essential vitamin", "Makes held melee weapons attack faster and held mining tools mine faster");
+        forModifier(JewelryModifiers.LOYAL_GEM, "Loyal", "The lightest armor is no armor", "Reduces damage based on how few armour pieces you wear");
     }
 
     private void forMaterial(MaterialId key) {

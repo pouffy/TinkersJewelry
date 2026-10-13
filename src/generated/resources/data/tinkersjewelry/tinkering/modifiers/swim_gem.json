@@ -10,6 +10,7 @@
         "*"
       ],
       "operation": "addition",
+      "tooltip_style": "percent",
       "unique": "tinkersjewelry.modifier.swim_gem",
       "variables": {
         "amplification": {

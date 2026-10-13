@@ -94,6 +94,10 @@ public class JewelryMaterialStatsData extends AbstractMaterialStatsDataProvider 
 		addMaterialStats(MaterialIds.skyslime, GemMaterialStats.INSTANCE);
 		addMaterialStats(MaterialIds.earthslime, GemMaterialStats.INSTANCE);
 
+		addMaterialStats(MaterialIds.magnetite, GemMaterialStats.INSTANCE);
+		addMaterialStats(MaterialIds.kobold, GemMaterialStats.INSTANCE);
+		addMaterialStats(MaterialIds.knightly, GemMaterialStats.INSTANCE);
+
 		addMaterialStats(MaterialIds.rock, GemMaterialStats.INSTANCE);
 		addMaterialStats(MaterialIds.flint, GemMaterialStats.INSTANCE);
 		addMaterialStats(MaterialIds.obsidian, GemMaterialStats.INSTANCE);

@@ -1,0 +1,65 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkersjewelry:attribute_modifier",
+      "attribute": "minecraft:generic.attack_speed",
+      "formula": [
+        "$level",
+        0.05,
+        "*",
+        "$amplification",
+        "*"
+      ],
+      "operation": "multiply_total",
+      "tooltip_style": "percent",
+      "unique": "tinkersjewelry.modifier.cobalamin_gem",
+      "variables": {
+        "amplification": {
+          "type": "tconstruct:tool_stat",
+          "stat": "tinkersjewelry:amplification"
+        }
+      }
+    },
+    {
+      "type": "tinkersjewelry:attribute_modifier",
+      "attribute": "tconstruct:player.use_item_speed",
+      "formula": [
+        "$level",
+        0.1,
+        "*",
+        "$amplification",
+        "*"
+      ],
+      "operation": "addition",
+      "tooltip_style": "percent",
+      "unique": "tinkersjewelry.modifier.cobalamin_gem",
+      "variables": {
+        "amplification": {
+          "type": "tconstruct:tool_stat",
+          "stat": "tinkersjewelry:amplification"
+        }
+      }
+    },
+    {
+      "type": "tinkersjewelry:attribute_modifier",
+      "attribute": "tconstruct:player.mining_speed_multiplier",
+      "formula": [
+        "$level",
+        0.15,
+        "*",
+        "$amplification",
+        "*"
+      ],
+      "operation": "multiply_total",
+      "tooltip_style": "percent",
+      "unique": "tinkersjewelry.modifier.cobalamin_gem",
+      "variables": {
+        "amplification": {
+          "type": "tconstruct:tool_stat",
+          "stat": "tinkersjewelry:amplification"
+        }
+      }
+    }
+  ]
+}

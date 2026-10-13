@@ -71,6 +71,10 @@ public class JewelryMaterialTraitData extends AbstractMaterialTraitDataProvider 
 		addTraits(MaterialIds.skyslime, GemMaterialStats.ID, TinkerModifiers.overslime.getId(), JewelryModifiers.SKYFALL_GEM);
 		addTraits(MaterialIds.earthslime, GemMaterialStats.ID, TinkerModifiers.overslime.getId(), JewelryModifiers.OVERGROWTH_GEM);
 
+		addTraits(MaterialIds.magnetite, GemMaterialStats.ID, JewelryModifiers.MAGNETIC);
+		addTraits(MaterialIds.kobold, GemMaterialStats.ID, JewelryModifiers.COBALAMIN_GEM);
+		addTraits(MaterialIds.knightly, GemMaterialStats.ID, JewelryModifiers.LOYAL_GEM);
+
 		addTraits(MaterialIds.rock, GemMaterialStats.ID, JewelryModifiers.ARMOR_GEM);
 		addTraits(MaterialIds.flint, GemMaterialStats.ID, JewelryModifiers.PIERCING_GEM);
 		addTraits(MaterialIds.obsidian, GemMaterialStats.ID, new ModifierEntry(JewelryModifiers.ARMOR_GEM, 1),

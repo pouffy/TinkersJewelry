@@ -14,6 +14,7 @@
         "*"
       ],
       "operation": "addition",
+      "tooltip_style": "percent",
       "unique": "tinkersjewelry.modifier.knockback_gem",
       "variables": {
         "amplification": {
